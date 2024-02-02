@@ -47,4 +47,17 @@ public class InputValidation {
             }
         }
     }
+
+    public void validate(String[] args, String command, String path, String key) {
+        validateInput(args);
+        validateCommand(command);
+        validateFilePath(path);
+        validateKey(key);
+    }
+
+    public void validate(String[] args, String command, String path) {
+        validateInput(args);
+        validateCommand(command);
+        validateFilePath(path);
+    }
 }
