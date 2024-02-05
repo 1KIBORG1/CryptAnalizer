@@ -1,10 +1,4 @@
-import IO.FileHandler;
-import exception.InvalidArgumentException;
 import managers.ProgramManager;
-import service.BruteForceService;
-import service.DecryptService;
-import service.EncryptService;
-import util.InputValidation;
 
 
 public class Main {
@@ -15,11 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ProgramManager programManager = new ProgramManager();
-        if (args.length == 3) {
-            programManager.execute(args, args[COMMAND_ARGUMENT_POSITION], args[FILE_PATH_ARGUMENT_POSITION], args[KEY_ARGUMENT_POSITION]);
-        } else {
-            programManager.execute(args, args[COMMAND_ARGUMENT_POSITION], args[FILE_PATH_ARGUMENT_POSITION]);
+        switch (args.length) {
+            case 3:
+                ProgramManager.startProgram(args, args[COMMAND_ARGUMENT_POSITION], args[FILE_PATH_ARGUMENT_POSITION], args[KEY_ARGUMENT_POSITION]);
+                break;
+            case 2:
+                ProgramManager.startProgram(args, args[COMMAND_ARGUMENT_POSITION], args[FILE_PATH_ARGUMENT_POSITION]);
+                break;
         }
 
 
