@@ -10,7 +10,7 @@ public class ProgramManager {
     private static final int FILE_PATH_ARGUMENT_POSITION = 1;
     private static final int KEY_ARGUMENT_POSITION = 2;
 
-    public void execute(String[] args, String command, String path, String key) {
+    public static void startProgram(String[] args, String command, String path, String key) {
         InputValidation inputValidation = new InputValidation();
         inputValidation.validate(args, command, path, key);
 
@@ -42,7 +42,7 @@ public class ProgramManager {
 
     }
 
-    public void execute(String[] args, String command, String path) {
+    public static void startProgram(String[] args, String command, String path) {
         InputValidation inputValidation = new InputValidation();
         inputValidation.validate(args, command, path);
 
